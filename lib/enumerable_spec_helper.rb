@@ -2,7 +2,7 @@ module EnumerableSpecHelper
   # :name is a method on #subject.
   def all_the name, description &block
     it "all the #{name} #{description}" do
-      (subject.send(:name).all? &blk).should be_true
+      (subject.send(name).all? &blk).should be_true
     end
   end
 end
