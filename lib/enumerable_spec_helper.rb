@@ -10,14 +10,14 @@ end
 describe World do
   extend EnumerableSpecHelper
 
-  subject { World.new(:people => [Factory.party_person, Factory.player, Factory.player_hater]) }
+  subject { World.new :people => [Factory.party_person, Factory.player, Factory.player_hater] }
 
   all_the :people, "like to party" do |p|
     p.party_preference == 'hell yes'
   end
 
   all_the :people, "live life for today" do |p|
-    p.live_life_for?(Time.now)
+    p.live_life_for? Time.now
   end
 
   all_the :people, "live life in peace" do |p|
@@ -25,6 +25,6 @@ describe World do
   end
 
   all_the :people, "share all the world" do |p|
-    described_class.has?(p)
+    described_class.has? p
   end
 end
